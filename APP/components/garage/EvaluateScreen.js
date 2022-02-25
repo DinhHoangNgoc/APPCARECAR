@@ -103,9 +103,7 @@ const Evaluates = () => {
       <View>{/* <Model></Model> */}</View>
       <View style={styles.BT}>
         <View
-          style={{
-            width: '80%',
-            height: '100%',
+          style={{           
             alignItems: 'center',
             justifyContent: 'space-around',
             flexDirection: 'row',
@@ -118,9 +116,9 @@ const Evaluates = () => {
             <Text style={{color: '#fff'}}>Viết đánh giá</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button1}>
-            <Icon name="funnel" size={20} />
+            <Icon name="funnel" size={15} />
             <Text>Mới nhất</Text>
-            <Icon name="chevron-down" size={20} />
+            <Icon name="chevron-down" size={15} />
           </TouchableOpacity>
         </View>
       </View>
@@ -133,7 +131,7 @@ const Evaluates = () => {
                   source={{uri: user.image}}
                   style={{
                     marginTop: 10,
-                    marginLeft: 5,
+                    paddingHorizontal:20,
                     width: 40,
                     height: 40,
                     borderRadius: 40 / 2,
@@ -164,6 +162,7 @@ const Evaluates = () => {
                       marginTop: 5,
                       flexDirection: 'row',
                       alignItems: 'center',
+                      paddingBottom:10
                     }}>
                     <Text
                       style={{
@@ -198,41 +197,39 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   BT: {
-    width: '100%',
-    height: 0.1 * config.screen.height,
-    alignItems: 'center',
     flexDirection: 'row',
     display: 'flex',
     justifyContent: 'space-around',
     backgroundColor: '#fff',
+    paddingTop: 10,
   },
   button: {
     backgroundColor: 'red',
-    width: 120,
-    height: 40,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 5,
+    padding: 10,
+    marginHorizontal: 10,
   },
   button1: {
     backgroundColor: '#fff',
-    width: 120,
-    height: 40,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 5,
     flexDirection: 'row',
     borderWidth: 1,
+    padding: 10,
+    marginHorizontal: 10,
   },
   listcmt: {
-    width: '100%',
+    backgroundColor: '#fff',
   },
   list: {
-    marginTop: 1,
-    width: '100%',
-    height: 80,
+    marginTop: 5,
     flexDirection: 'row',
     backgroundColor: '#fff',
+    borderBottomWidth: 1,
+    borderBottomColor: '#e0e0e0',
   },
 });
 

@@ -4,10 +4,12 @@ import Icon2 from "react-native-vector-icons/Ionicons";
 import {ClusterMap} from 'react-native-cluster-map';
 import {Marker} from 'react-native-maps';
 import {CheckBox, Icon} from 'react-native-elements';
+import { useNavigation } from "@react-navigation/native";
 
 
 const Rescues = ()=>{
 
+    const navigation = useNavigation();
     const [check,setcheck] = useState(false);
 
     return (
@@ -21,7 +23,9 @@ const Rescues = ()=>{
             justifyContent: 'space-between',
             alignItems: 'center',
           }}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() =>{
+            navigation.goBack()
+          }}>
             <Icon2
               name="chevron-back"
               color="red"

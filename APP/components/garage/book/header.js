@@ -4,7 +4,9 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import config from '../../../controller/constan';
 
 import { useNavigation } from '@react-navigation/native';
+
 const Headers1 = ({route}) =>{
+
      const navigation = useNavigation();
      const name = route?.params?.name ?? '';
 
@@ -12,29 +14,22 @@ const Headers1 = ({route}) =>{
       <SafeAreaView style={{flex: 1}}>
         <View style={styles.body}>
           <View>
-            <TouchableOpacity style={styles.BTselect}
-                onPress={() => {
-                    navigation.navigate(config.screenName.Listgarage)
-                }
-                
-    }>
-              <Icon
-                name="home"
-                color="red"
-                size={25}
-                style={{marginLeft: 10}}
-              />
+            <TouchableOpacity
+              style={styles.BTselect}
+              onPress={() => {
+                navigation.navigate(config.screenName.Listgarage);
+              }}>
+              <Icon name="home" color="red" size={25} />
               <Text style={{color: '#000', marginLeft: 5}}>{name}</Text>
             </TouchableOpacity>
           </View>
           <View
             style={{
-              width: '100%',
-              height: 60,
               flexDirection: 'row',
               alignItems: 'center',
               display: 'flex',
               justifyContent: 'space-between',
+              marginHorizontal: 10,
             }}>
             <View>
               <View
@@ -57,10 +52,11 @@ const Headers1 = ({route}) =>{
             </View>
             <>
               <TouchableOpacity
-                onPress={() => {navigation.navigate(config.screenName.Calendar)}}
+                onPress={() => {
+                  navigation.navigate(config.screenName.Calendar);
+                }}
                 style={{
-                  width: 80,
-                  height: 30,
+                  padding: 10,
                   backgroundColor: 'red',
                   marginRight: 15,
                   alignItems: 'center',
@@ -71,14 +67,17 @@ const Headers1 = ({route}) =>{
               </TouchableOpacity>
             </>
           </View>
-          <View style={{marginTop: 10}}>
-            <View style={{flexDirection:'row',marginLeft:10, alignItems: 'center'}}>
-              <Icon name="time" color="red" size={30} />
-              <Text style={{marginLeft:5,color: '#000'}}>Giờ hẹn</Text>
+          <View style={{marginTop: 10, marginHorizontal: 10}}>
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+              <Icon
+                name="time"
+                color="red"
+                size={30}
+                style={{marginLeft: 10}}
+              />
+              <Text style={{marginLeft: 5, color: '#000'}}>Giờ hẹn</Text>
             </View>
-            <View>
-
-            </View>
+            <View></View>
           </View>
         </View>
       </SafeAreaView>
@@ -88,15 +87,16 @@ const Headers1 = ({route}) =>{
 
 const styles = StyleSheet.create({
   body: {
-    width: '100%',
-    flex: 1,
+    width:config.screen.width,
+    height:config.screen.height
   },
   BTselect: {
-    height: 50,
+    padding:10,
     borderBottomWidth: 1,
     borderBottomColor: '#b5b5b5',
     flexDirection: 'row',
     alignItems: 'center',
+    marginHorizontal:10
   },
 });
 

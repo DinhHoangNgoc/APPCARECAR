@@ -27,22 +27,17 @@ const Bookcalendar = () =>{
             <View>
               <View
                 style={{
-                  width: '100%',
-                  height: 60,
+                  paddingVertical: 20,
                   borderBottomWidth: 1,
                   borderBottomColor: '#b5b5b5',
                 }}>
                 <Image
                   source={config.icons.Steps1}
-                  style={{width: '100%', height: '100%'}}
-                  resizeMode="center"
+                  style={{width: config.screen.width, height: 50}}
+                  resizeMode="contain"
                 />
               </View>
-              <View
-                style={{
-                  width: '100%',
-                  height: 0.7 * config.screen.height,
-                }}>
+              <View>
                 <Headers1 />
               </View>
             </View>
@@ -52,22 +47,17 @@ const Bookcalendar = () =>{
             <View>
               <View
                 style={{
-                  width: '100%',
-                  height: 60,
+                  paddingVertical: 20,
                   borderBottomWidth: 1,
                   borderBottomColor: '#b5b5b5',
                 }}>
                 <Image
                   source={config.icons.Steps2}
-                  style={{width: '100%', height: '100%'}}
-                  resizeMode="center"
+                  style={{width: config.screen.width, height: 50}}
+                  resizeMode="contain"
                 />
               </View>
-              <View
-                style={{
-                  width: '100%',
-                  height: 0.7 * config.screen.height,
-                }}>
+              <View>
                 <Headers2 />
               </View>
             </View>
@@ -77,22 +67,17 @@ const Bookcalendar = () =>{
             <View>
               <View
                 style={{
-                  width: '100%',
-                  height: 60,
+                  paddingVertical: 20,
                   borderBottomWidth: 1,
                   borderBottomColor: '#b5b5b5',
                 }}>
                 <Image
                   source={config.icons.Steps3}
-                  style={{width: '100%', height: '100%'}}
-                  resizeMode="center"
+                  style={{width: config.screen.width, height: 50}}
+                  resizeMode="contain"
                 />
               </View>
-              <View
-                style={{
-                  width: '100%',
-                  height: 0.7 * config.screen.height,
-                }}>
+              <View>
                 <Headers3 />
               </View>
             </View>
@@ -108,12 +93,22 @@ const Bookcalendar = () =>{
             onPress={() => {
               navigation.goBack();
             }}>
-            <Icon name="chevron-back" size={35} color="red" />
+            <Icon name="chevron-back" size={35} color="red"  />
           </TouchableOpacity>
           <Text style={styles.TEXTheader}>Đặt Lịch</Text>
+          <View/>
         </View>
         <View>{selectedTab(count)}</View>
-        <View style={{flexDirection:'row', display: 'flex',justifyContent: 'space-between'}}>
+        <View 
+          style={{
+            flexDirection:'row', 
+            display: 'flex',
+            justifyContent: 'space-between',
+            position: 'absolute',
+            left: 10,
+            right: 10,
+            bottom:40
+          }}>
           <TouchableOpacity
             disabled={count == 1 ? true : false}
             style={count == 1 ?styles.BT2: styles.BT}
@@ -139,18 +134,18 @@ const Bookcalendar = () =>{
 
 const styles = StyleSheet.create({
   header: {
-    width: '100%',
-    height: 50,
+    padding:10,
     borderBottomWidth: 1,
     borderBottomColor: '#e2e0e0',
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent:'space-between'
   },
   TEXTheader: {
     color: 'red',
     fontSize: 20,
     fontWeight: 'bold',
-    marginLeft: 0.35 * config.screen.width,
+    marginLeft:-20
   },
   BT: {
     backgroundColor: 'red',

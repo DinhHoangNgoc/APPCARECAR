@@ -24,13 +24,17 @@ const Services = () => {
       <View style={styles.content}>
         <TouchableOpacity style={styles.button} onPress={createTwoButtonAlert}>
           <Text style={styles.TEXTNAME}>Chăm sóc xe</Text>
-          <Text style={{...TEXT}}>- Rua xe </Text>
+          <Text style={{...TEXT}} numberOfLines={1}>
+            - Rua xe nmsadbjsahddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={createTwoButtonAlert}>
           <Text style={styles.TEXTNAME}>Bảo dưỡng xe ô tô.</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={createTwoButtonAlert}>
-          <Text style={styles.TEXTNAME}>Chăm sóc, làm đẹp xe ô tô</Text>
+          <Text style={styles.TEXTNAME} numberOfLines={1}>
+            Chăm sóc, làm đẹp xe ô tô
+          </Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -38,7 +42,6 @@ const Services = () => {
 };
 
 const TEXT = {
-  fontFamily: 'balihoscript',
   marginLeft: 10,
 };
 
@@ -48,14 +51,11 @@ const styles = StyleSheet.create({
   },
   content: {
     fontWeight: 'bold',
-    alignItems: 'center',
   },
 
   button: {
+    marginHorizontal:10,
     marginTop: 10,
-    width: '95%',
-    height: 60,
-    justifyContent: 'center',
     borderRadius: 15,
     backgroundColor: '#fff',
     shadowColor: '#7F5DF0',
@@ -66,6 +66,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.5,
     elevation: 5,
+    padding:5
   },
   TEXTNAME: {
     ...TEXT,

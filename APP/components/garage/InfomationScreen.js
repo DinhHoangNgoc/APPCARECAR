@@ -145,10 +145,12 @@ const styles = StyleSheet.create({
   },
   content: {
     marginTop: 10,
-    width: '100%',
   },
   TEXT: {
     color: '#000',
+    marginHorizontal: 10,
+    fontFamily: 'poppinsBold',
+    fontSize: 15,
   },
 });
 

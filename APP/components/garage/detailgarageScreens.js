@@ -26,6 +26,7 @@ const data = [
 ];
 
 const DetailGarage = ({route}) => {
+
   const [view, setView] = useState('1');
 
   const datas = route?.params?.item;
@@ -55,8 +56,6 @@ const DetailGarage = ({route}) => {
       <View style={styles.header}>
         <TouchableOpacity
           style={{
-            width: 30,
-            height: '100%',
             marginHorizontal: 5,
             alignItems: 'center',
             justifyContent: 'center',
@@ -70,13 +69,12 @@ const DetailGarage = ({route}) => {
           style={{
             color: 'red',
             fontSize: 20,
+            fontWeight: 'bold',
           }}>
           {datas?.name}
         </Text>
         <TouchableOpacity
           style={{
-            width: 30,
-            height: '100%',
             marginHorizontal: 5,
             alignItems: 'center',
             justifyContent: 'center',
@@ -86,48 +84,46 @@ const DetailGarage = ({route}) => {
       </View>
       <ScrollView style={styles.container} stickyHeaderIndices={[3]}>
         <Slider listImage={data} />
-        <View style={styles.adrress}>
-          <View style={styles.information}>
+        <View style={styles.information}>
+          <View>
+            <Text style={styles.NAME}>{datas?.name}</Text>
+            <View
+              style={{
+                flexDirection: 'row',
+                marginLeft: 5,
+                marginTop: 5,
+                alignItems: 'center',
+              }}>
+              <Icon name="location" />
+              <Text style={styles.ADDRESS}>{datas?.address}</Text>
+            </View>
+          </View>
+          <View style={{flexDirection: 'row', marginRight: 10}}>
             <View>
-              <Text style={styles.NAME}>{datas?.name}</Text>
               <View
                 style={{
-                  flexDirection: 'row',
-                  marginLeft: 5,
-                  marginTop: 5,
                   alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: 5,
                 }}>
-                <Icon name="location" />
-                <Text style={styles.ADDRESS}>{datas?.address}</Text>
+                <Text>5</Text>
+                <Icon name="star" color="yellow" size={20} />
               </View>
             </View>
-            <View style={{flexDirection: 'row', marginRight: 10}}>
-              <View>
-                <View
-                  style={{
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    margin: 5,
-                  }}>
-                  <Text>5</Text>
-                  <Icon name="star" color="yellow" size={20} />
-                </View>
-              </View>
-              <View>
-                <View
-                  style={{
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    margin: 5,
-                  }}>
-                  <Text>16</Text>
-                  <Icon
-                    name="chatbox-ellipses"
-                    color="red"
-                    size={20}
-                    style={{marginTop: 2}}
-                  />
-                </View>
+            <View>
+              <View
+                style={{
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: 5,
+                }}>
+                <Text>16</Text>
+                <Icon
+                  name="chatbox-ellipses"
+                  color="red"
+                  size={20}
+                  style={{marginTop: 2}}
+                />
               </View>
             </View>
           </View>
@@ -144,55 +140,67 @@ const DetailGarage = ({route}) => {
             <Marker
               coordinate={{latitude: 16.0755021, longitude: 108.2222098}}
             />
-            <Marker
-              coordinate={{latitude: 16.0755025, longitude: 108.22221}}
-            />
+            <Marker coordinate={{latitude: 16.0755025, longitude: 108.22221}} />
           </ClusterMap>
           <View style={styles.BTmap}>
             <View
               style={{
-                width: 100,
                 alignItems: 'center',
                 justifyContent: 'center',
+                marginRight: 10,
               }}>
-              <Text style={{color: 'green'}}>ĐANG MỞ CỬA</Text>
+              <Text style={{color: 'green', fontWeight: 'bold', fontSize: 12}}>
+                ĐANG MỞ CỬA
+              </Text>
               <Text style={{color: '#000'}}>08:00 - 17:00</Text>
             </View>
             <TouchableOpacity
               style={{
                 flexDirection: 'row',
-                width: 120,
-                marginLeft: 10,
                 borderWidth: 1,
                 borderColor: 'red',
                 borderRadius: 10,
                 alignItems: 'center',
                 justifyContent: 'center',
+                padding: 2,
+                marginHorizontal: 5,
               }}
               onPress={() => {
                 navigation.navigate(config.screenName.Bookcalendar);
               }}>
-              <Icon name="checkbox" color="red" size={25} />
-              <Text>Đặt lịch ngay</Text>
+              <Icon
+                name="checkbox"
+                color="red"
+                size={20}
+                style={{marginLeft: 5}}
+              />
+              <Text style={{color: 'red', marginHorizontal: 5}}>
+                Đặt lịch ngay
+              </Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={{
                 flexDirection: 'row',
-                marginLeft: 10,
-                width: 120,
                 borderWidth: 1,
                 borderColor: 'red',
                 borderRadius: 10,
                 alignItems: 'center',
                 justifyContent: 'center',
+                marginLeft: 10,
+                padding: 2,
               }}
               onPress={() => {
                 navigation.navigate(config.screenName.Chatgarage, {
                   name: datas?.name,
                 });
               }}>
-              <Icon name="chatbox-ellipses" color="red" size={25} />
-              <Text>Chat ngay</Text>
+              <Icon
+                name="chatbox-ellipses"
+                color="red"
+                size={20}
+                style={{marginLeft: 5}}
+              />
+              <Text style={{color: 'red', marginHorizontal: 5}}>Chat ngay</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -201,28 +209,28 @@ const DetailGarage = ({route}) => {
             <TouchableOpacity
               onPress={() => setTab('1')}
               style={view == '1' ? styles.BTtabs1 : styles.BTtabs}>
-              <Text style={view == '1' ? {color: 'red'} : {color: '#000'}}>
+              <Text style={view == '1' ? styles.TEXT1 : styles.TEXT2}>
                 Thông Tin
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => setTab('2')}
               style={view == '2' ? styles.BTtabs1 : styles.BTtabs}>
-              <Text style={view == '2' ? {color: 'red'} : {color: '#000'}}>
+              <Text style={view == '2' ? styles.TEXT1 : styles.TEXT2}>
                 Dịch Vụ
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => setTab('3')}
               style={view == '3' ? styles.BTtabs1 : styles.BTtabs}>
-              <Text style={view == '3' ? {color: 'red'} : {color: '#000'}}>
+              <Text style={view == '3' ? styles.TEXT1 : styles.TEXT2}>
                 Lịch hẹn
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={view == '4' ? styles.BTtabs1 : styles.BTtabs}
               onPress={() => setTab('4')}>
-              <Text style={view == '4' ? {color: 'red'} : {color: '#000'}}>
+              <Text style={view == '4' ? styles.TEXT1 : styles.TEXT2}>
                 Đánh giá
               </Text>
             </TouchableOpacity>
@@ -238,8 +246,7 @@ export default DetailGarage;
 
 const styles = StyleSheet.create({
   header: {
-    width: config.screen.width,
-    height: 0.05 * config.screen.height,
+    padding: 10,
     flexDirection: 'row',
     alignItems: 'center',
     display: 'flex',
@@ -250,52 +257,66 @@ const styles = StyleSheet.create({
   },
   adrress: {
     backgroundColor: '#fff',
-    with: '100%',
-    height: 0.07 * config.screen.height,
     flexDirection: 'row',
+    padding: 5,
   },
   NAME: {
-    marginLeft:5,
-    fontSize:18,
+    marginLeft: 10,
+    fontSize: 18,
     fontWeight: 'bold',
     color: '#000',
   },
-  ADDRESS:{
-    fontSize:12,
+  ADDRESS: {
+    fontSize: 12,
   },
   information: {
-    width: '100%',
+    top: 0,
+    left: 0,
+    right: 0,
     flexDirection: 'row',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
+    backgroundColor: '#fff',
   },
   ggmap: {
-    width: '100%',
-    height: 0.2 * config.screen.height,
+    padding: 50,
   },
-  BTmap:{
-    // marginTop: -0.05 * config.screen.height,
+  BTmap: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    padding: 5,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },
   Tabs: {
     flexDirection: 'row',
-    backgroundColor:'#fff'
+    backgroundColor: '#fff',
   },
   BTtabs: {
-    width: '25%',
-    height: 40,
+    padding: 10,
     alignItems: 'center',
     justifyContent: 'center',
+    flex: 1,
   },
   BTtabs1: {
-    width: '25%',
-    height: 40,
+    padding: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    borderBottomWidth:2,
-    borderBottomColor:'red'
+    borderBottomWidth: 2,
+    borderBottomColor: 'red',
+    flex: 1,
+  },
+  TEXT1: {
+    color: 'red',
+    fontSize: 15,
+    fontWeight: 'bold',
+  },
+  TEXT2: {
+    color: '#000',
+    fontSize: 15,
   },
 });

@@ -17,18 +17,17 @@ const Headers3 = ({route}) => {
     const navigation = useNavigation();
     const [issuess, setissuess] = useState(false);
   return (
-    <SafeAreaView style={{flex: 1, alignItems: 'center'}}>
-      <ScrollView style={{width: '95%'}}>
+    <SafeAreaView>
+      <ScrollView>
         <View
           style={{
             flexDirection: 'row',
-            width: '100%',
-            height: 60,
+            padding: 10,
             borderBottomWidth: 1,
             borderBottomColor: '#b5b5b5',
             alignItems: 'center',
           }}>
-          <Icon name="person" color="red" size={25} style={{marginLeft: 10}} />
+          <Icon name="person" color="red" size={30} style={{marginLeft: 10}} />
           <TextInput
             style={{width: '100%', height: '100%', marginLeft: 5}}
             placeholder="Ho Ten"
@@ -37,28 +36,27 @@ const Headers3 = ({route}) => {
         <View
           style={{
             flexDirection: 'row',
-            width: '100%',
-            height: 60,
+            padding: 10,
             borderBottomWidth: 1,
             borderBottomColor: '#b5b5b5',
             alignItems: 'center',
           }}>
-          <Icon name="call" color="red" size={25} style={{marginLeft: 10}} />
+          <Icon name="call" color="red" size={30} style={{marginLeft: 10}} />
           <TextInput
             style={{width: '100%', height: '100%', marginLeft: 5}}
             placeholder="Số điện thoại"
+            keyboardType ='numeric'
           />
         </View>
         <View
           style={{
             flexDirection: 'row',
-            width: '100%',
-            height: 60,
+            padding: 10,
             borderBottomWidth: 1,
             borderBottomColor: '#b5b5b5',
             alignItems: 'center',
           }}>
-          <Icon name="car" color="red" size={25} style={{marginLeft: 10}} />
+          <Icon name="car" color="red" size={30} style={{marginLeft: 10}} />
           <TextInput
             style={{width: '100%', height: '100%', marginLeft: 5}}
             placeholder="Thông tin xe(tên xe,năm sản xuất...)"
@@ -67,8 +65,7 @@ const Headers3 = ({route}) => {
         <View
           style={{
             flexDirection: 'row',
-            width: '100%',
-            height: 60,
+            padding: 10,
             borderBottomWidth: 1,
             borderBottomColor: '#b5b5b5',
             alignItems: 'center',
@@ -76,7 +73,7 @@ const Headers3 = ({route}) => {
           <Icon
             name="pricetag"
             color="red"
-            size={25}
+            size={30}
             style={{marginLeft: 10}}
           />
           <TextInput
@@ -87,13 +84,12 @@ const Headers3 = ({route}) => {
         <View
           style={{
             flexDirection: 'row',
-            width: '100%',
-            height: 60,
+            padding: 10,
             borderBottomWidth: 1,
             borderBottomColor: '#b5b5b5',
             alignItems: 'center',
           }}>
-          <Icon name="reader" color="red" size={25} style={{marginLeft: 10}} />
+          <Icon name="reader" color="red" size={30} style={{marginLeft: 10}} />
           <TextInput
             style={{width: '100%', height: '100%', marginLeft: 5}}
             placeholder="Số khung xe"
@@ -102,8 +98,7 @@ const Headers3 = ({route}) => {
         <View
           style={{
             flexDirection: 'row',
-            width: '100%',
-            height: 60,
+            padding: 10,
             borderBottomWidth: 1,
             borderBottomColor: '#b5b5b5',
             alignItems: 'center',
@@ -111,7 +106,7 @@ const Headers3 = ({route}) => {
           <Icon
             name="information-circle"
             color="red"
-            size={25}
+            size={30}
             style={{marginLeft: 10}}
           />
           <TextInput
@@ -122,7 +117,6 @@ const Headers3 = ({route}) => {
         <CheckBox
           center
           containerStyle={{
-            width: '100%',
             backgroundColor: '#FFFFFF',
             borderColor: '#FFFFFF',
           }}
@@ -140,11 +134,10 @@ const Headers3 = ({route}) => {
 
 const styles = StyleSheet.create({
   body: {
-    width: '100%',
-    flex: 1,
+    width:config.screen.width,
+    height: config.screen.height
   },
   BTselect: {
-    height: 50,
     borderBottomWidth: 1,
     borderBottomColor: '#b5b5b5',
     flexDirection: 'row',

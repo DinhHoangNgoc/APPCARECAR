@@ -135,8 +135,11 @@ const Listgarage = ()=>{
 
     return (
       <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          <TouchableOpacity onPress={()=>{navigation.goBack()}}>
+        <View style={styles.header}>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.goBack();
+            }}>
             <Icon name="chevron-back" color="red" size={30} />
           </TouchableOpacity>
           <Text
@@ -144,20 +147,20 @@ const Listgarage = ()=>{
               color: 'red',
               fontSize: 20,
               fontWeight: 'bold',
-              marginLeft: 100,
             }}>
             Chọn Garage
           </Text>
+          <View />
         </View>
-        <View style={{alignItems: 'center', height: '100%',marginTop:10}}>
+        <View>
           <View
             style={{
               flexDirection: 'row',
               alignItems: 'center',
-              backgroundColor: '#b2b2b2',
-              width: '95%',
-              height: 35,
+              backgroundColor: '#d3d3d3',
               borderRadius: 10,
+              marginTop: 10,
+              marginHorizontal: 10,
             }}>
             <Icon
               name="search"
@@ -166,9 +169,10 @@ const Listgarage = ()=>{
                 marginLeft: 10,
               }}
             />
-            <TextInput
-              style={{width: '90%', height: '100%'}}
-              placeholder="Nhập để tìm kiếm..."
+            <TextInput placeholder="Nhập để tìm kiếm..." 
+              style={{
+                padding:5
+              }}
             />
           </View>
           <View style={styles.List}>
@@ -205,19 +209,24 @@ const Listgarage = ()=>{
 }
 
 const styles = StyleSheet.create({
+  header: {
+    padding: 5,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: '#e5e5e5',
+  },
   List: {
     marginTop: 10,
-    width: '100%',
-    marginBottom: 25,
+    marginBottom: 55,
   },
   flatList: {
-    width: '100%',
     backgroundColor: 'white',
   },
   listItem: {
-    width: '100%',
     flexDirection: 'row',
-    height: 45,
+    padding:5,
     borderBottomWidth: 1,
     borderBottomColor: '#b7b7b7',
     alignItems: 'center',
