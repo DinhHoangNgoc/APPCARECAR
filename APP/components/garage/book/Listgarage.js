@@ -1,8 +1,8 @@
-import React from 'react';
-import {View, Text, SafeAreaView, StyleSheet,TextInput,FlatList,TouchableOpacity} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import config from '../../../controller/constan';
-import { useNavigation } from '@react-navigation/native';
+import React from 'react'
+import {View, Text, SafeAreaView, StyleSheet,TextInput,FlatList,TouchableOpacity} from 'react-native'
+import Icon from 'react-native-vector-icons/Ionicons'
+import config from '../../../controller/Constant'
+import { useNavigation } from '@react-navigation/native'
 
 
 const infor = [

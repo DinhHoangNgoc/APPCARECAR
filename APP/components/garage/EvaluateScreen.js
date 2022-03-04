@@ -13,7 +13,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import {Rating, AirbnbRating} from 'react-native-ratings';
 import {useNavigation} from '@react-navigation/native';
-import config from '../../controller/constan';
+import config from '../../controller/Constant'
 
 
 

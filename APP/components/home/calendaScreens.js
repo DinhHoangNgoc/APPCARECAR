@@ -1,5 +1,5 @@
-import React from 'react';
-import {View, Text, SafeAreaView, StyleSheet} from 'react-native';
+import React from 'react'
+import {View, Text, SafeAreaView, StyleSheet} from 'react-native'
 
 const Calendas = () => {
   return (

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState} from 'react'
 import {
   View,
   Text,
@@ -7,9 +7,9 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import config from '../../controller/constan';
+} from 'react-native'
+import Icon from 'react-native-vector-icons/Ionicons'
+import config from '../../controller/Constant'
 
 
 const Register = ({navigation}) => {

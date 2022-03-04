@@ -7,10 +7,10 @@ import {
   TouchableOpacity,
   ScrollView,
   TextInput
-} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import {CheckBox} from 'react-native-elements';
-import config from '../../../controller/constan';
+} from 'react-native'
+import Icon from 'react-native-vector-icons/Ionicons'
+import {CheckBox} from 'react-native-elements'
+import config from '../../../controller/Constant'
 
 import {useNavigation} from '@react-navigation/native';
 const Headers3 = ({route}) => {

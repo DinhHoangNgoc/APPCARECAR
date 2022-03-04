@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   View,
   SafeAreaView,
@@ -6,10 +6,10 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import {useNavigation} from '@react-navigation/native';
-import config from '../../../controller/constan';
+} from 'react-native'
+import Icon from 'react-native-vector-icons/Ionicons'
+import {useNavigation} from '@react-navigation/native'
+import config from '../../../controller/Constant'
 
 const UpdatePassword = () => {
   const navigation = useNavigation();

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState} from 'react'
 import {
   View,
   Text,
@@ -7,10 +7,10 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
-} from 'react-native';
-import {CheckBox} from 'react-native-elements';
-import config from '../../controller/constan';
-import Icon from 'react-native-vector-icons/Ionicons';
+} from 'react-native'
+import {CheckBox} from 'react-native-elements'
+import config from '../../controller/Constant'
+import Icon from 'react-native-vector-icons/Ionicons'
 
 const Login = ({navigation}) => {
   const [phone, setphone] = useState('');

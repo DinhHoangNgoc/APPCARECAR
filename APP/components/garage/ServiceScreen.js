@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   View,
   Text,
@@ -6,7 +6,7 @@ import {
   SafeAreaView,
   StyleSheet,
   Alert,
-} from 'react-native';
+} from 'react-native'
 
 const Services = () => {
   const createTwoButtonAlert = () =>

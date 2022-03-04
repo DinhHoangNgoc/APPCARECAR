@@ -5,8 +5,8 @@ import {
   SafeAreaView,
   StyleSheet,
   ScrollView,
-} from 'react-native';
-import config from '../../controller/constan';
+} from 'react-native'
+import config from '../../controller/Constant'
 
 
 const Information = () => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   View,
   SafeAreaView,
@@ -7,10 +7,10 @@ import {
   TextInput,
   TouchableOpacity,
   Dimensions,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import {useNavigation} from '@react-navigation/native';
-import config from '../../../controller/constan';
+} from 'react-native'
+import Icon from 'react-native-vector-icons/Ionicons'
+import {useNavigation} from '@react-navigation/native'
+import config from '../../../controller/Constant'
 
 const Updateprofile = ({route}) => {
   const name = route.params.name;

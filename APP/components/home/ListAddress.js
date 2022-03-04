@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
-import config from '../../controller/constan';
+import config from '../../controller/Constant'
 
 const infodata = [
   {
@@ -26,10 +26,11 @@ const ListAdrress = () => {
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={styles.header}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() =>{navigation.goBack()}}>
           <Icon name="chevron-back" size={25} color="red" />
         </TouchableOpacity>
         <Text style={styles.TEXTheader}>Tỉnh/thành phố</Text>
+        <View />
       </View>
       <View>
         <FlatList
@@ -41,9 +42,9 @@ const ListAdrress = () => {
             <TouchableOpacity 
                 style={styles.BT}
                 onPress={() => {
-                navigation.navigate('Home', {location: item.name});
+                navigation.navigate(config.screenName.Home,{location: item.name});
               }}>
-              <Text style={{fontSize:15}}>{item.name}</Text>
+              <Text style={{fontSize:15,color: '#000000'}}>{item.name}</Text>
             </TouchableOpacity>
           )}
         />
@@ -53,21 +54,22 @@ const ListAdrress = () => {
 };
 
 const styles = StyleSheet.create({
-    header: {
-        width: '100%',
-        height:50,
-        alignItems: 'center',
-        flexDirection: 'row',
-    },
-    TEXTheader:{
-        color:'red', 
-        marginLeft:0.25*config.screen.width,
-        fontSize:20, 
-        fontWeight: 'bold'
-    },
-    BT:{
-        margin:10
-    }
-})
+  header: {
+    padding: 10,
+    alignItems: 'center',
+    flexDirection: 'row',
+    borderBottomWidth: 1,
+    borderBottomColor: '#dddbdb',
+    justifyContent: 'space-between'
+  },
+  TEXTheader: {
+    color: 'red',
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  BT: {
+    margin: 10,
+  },
+});
 
 export default ListAdrress;

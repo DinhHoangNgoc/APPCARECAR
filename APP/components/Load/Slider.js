@@ -1,7 +1,7 @@
-import {StyleSheet, Text, View, Dimensions, Image} from 'react-native';
+import {StyleSheet, Text, View, Dimensions, Image} from 'react-native'
 import React from 'react';
-import {SwiperFlatList} from 'react-native-swiper-flatlist';
-import config from '../../controller/constan';
+import {SwiperFlatList} from 'react-native-swiper-flatlist'
+import config from '../../controller/Constant'
 
 const Slider = ({listImage}) => {
   return (

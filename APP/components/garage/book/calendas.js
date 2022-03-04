@@ -1,9 +1,9 @@
-import React from 'react';
-import {View, Text, StyleSheet,TouchableOpacity} from 'react-native';
-import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
-import Icon from 'react-native-vector-icons/Ionicons';
-import {LocaleConfig} from 'react-native-calendars';
-import {useNavigation} from '@react-navigation/native';
+import React from 'react'
+import {View, Text, StyleSheet,TouchableOpacity} from 'react-native'
+import {Calendar, CalendarList, Agenda} from 'react-native-calendars'
+import Icon from 'react-native-vector-icons/Ionicons'
+import {LocaleConfig} from 'react-native-calendars'
+import {useNavigation} from '@react-navigation/native'
 
 LocaleConfig.locales['fr'] = {
   monthNames: [

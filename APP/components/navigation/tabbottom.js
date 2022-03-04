@@ -4,10 +4,10 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import Home from '../home/Home';
 import Chat from '../home/ChatScreen';
-import Calendas from '../home/calendaScreens';
+import Calendas from '../home/CalendaScreens';
 import Profile from '../authentication/ProfileScreen';
-import Qrcode from '../home/qrcodeScreen';
-import config from '../../controller/constan';
+import Qrcode from '../home/QrcodeScreen';
+import config from '../../controller/Constant';
 
 const Tab = createBottomTabNavigator();
 

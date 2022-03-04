@@ -9,12 +9,12 @@ import {
   StyleSheet,
   StatusBar,
   ScrollView,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import Slider from '../Load/Slider';
-import {useNavigation} from '@react-navigation/native';
-import axios from 'axios';
-import config from '../../controller/constan';
+} from 'react-native'
+import Icon from 'react-native-vector-icons/Ionicons'
+import Slider from '../Load/Slider'
+import {useNavigation} from '@react-navigation/native'
+import axios from 'axios'
+import config from '../../controller/Constant'
 
 const data = [
   'https://danviet.mediacdn.vn/upload/1-2016/images/2016-03-12/1457778024-gara5.jpg',
@@ -24,124 +24,11 @@ const data = [
 const StaticProductsImage =
   'https://danangaz.com/wp-content/uploads/2019/02/sua-chua-o-to-da-nang-04-min.jpg';
 
-const products = [
-  {
-    id: 1,
-    name: 'shinwa Pro Garage',
-    adress: '630 Nguyen Huu Tho, cam le, Da nang',
-    star: 4.5,
-    comment: 10,
-    cmtimage: 0,
-    image:
-      'https://danangaz.com/wp-content/uploads/2019/02/sua-chua-o-to-da-nang-04-min.jpg',
-  },
-  {
-    id: 2,
-    name: 'JP Long',
-    adress: 'Lo 15-16 Nam Tran, Lien chieu, Da Nanng',
-    star: 4.5,
-    comment: 10,
-    cmtimage: 0,
-    image:
-      'https://thietbitudongags.com/wp-content/uploads/2018/11/san_nang_garage_ngam-19.jpg}',
-  },
-  {
-    id: 3,
-    name: 'AT Auto',
-    adress: '630 Nguyen Huu Tho, cam le, Da nang',
-    star: 4.5,
-    comment: 10,
-    cmtimage: 0,
-    image:
-      'https://danangaz.com/wp-content/uploads/2019/02/sua-chua-o-to-da-nang-04-min.jpg',
-  },
-  {
-    id: 4,
-    name: 'AT Auto',
-    adress: '630 Nguyen Huu Tho, cam le, Da nang',
-    star: 4.5,
-    comment: 10,
-    cmtimage: 0,
-    image:
-      'https://danangaz.com/wp-content/uploads/2019/02/sua-chua-o-to-da-nang-04-min.jpg',
-  },
-  {
-    id: 5,
-    name: 'AT Auto',
-    adress: '630 Nguyen Huu Tho, cam le, Da nang',
-    star: 4.5,
-    comment: 10,
-    cmtimage: 0,
-    image:
-      'https://danangaz.com/wp-content/uploads/2019/02/sua-chua-o-to-da-nang-04-min.jpg',
-  },
-  {
-    id: 6,
-    name: 'AT Auto',
-    adress: '630 Nguyen Huu Tho, cam le, Da nang',
-    star: 4.5,
-    comment: 10,
-    cmtimage: 0,
-    image:
-      'https://danangaz.com/wp-content/uploads/2019/02/sua-chua-o-to-da-nang-04-min.jpg',
-  },
-  {
-    id: 7,
-    name: 'AT Auto',
-    adress: '630 Nguyen Huu Tho, cam le, Da nang',
-    star: 4.5,
-    comment: 10,
-    cmtimage: 0,
-    image:
-      'https://danangaz.com/wp-content/uploads/2019/02/sua-chua-o-to-da-nang-04-min.jpg',
-  },
-  {
-    id: 8,
-    name: 'AT Auto',
-    adress: '630 Nguyen Huu Tho, cam le, Da nang',
-    star: 4.5,
-    comment: 10,
-    cmtimage: 0,
-    image:
-      'https://danangaz.com/wp-content/uploads/2019/02/sua-chua-o-to-da-nang-04-min.jpg',
-  },
-  {
-    id: 9,
-    name: 'AT Auto',
-    adress: '630 Nguyen Huu Tho, cam le, Da nang',
-    star: 4.5,
-    comment: 10,
-    cmtimage: 0,
-    image:
-      'https://danangaz.com/wp-content/uploads/2019/02/sua-chua-o-to-da-nang-04-min.jpg',
-  },
-  {
-    id: 10,
-    name: 'AT Auto',
-    adress: '630 Nguyen Huu Tho, cam le, Da nang',
-    star: 4.5,
-    comment: 10,
-    cmtimage: 0,
-    image:
-      'https://danangaz.com/wp-content/uploads/2019/02/sua-chua-o-to-da-nang-04-min.jpg',
-  },
-  {
-    id: 11,
-    name: 'AT Auto',
-    adress: '630 Nguyen Huu Tho, cam le, Da nang',
-    star: 4.5,
-    comment: 10,
-    cmtimage: 0,
-    image:
-      'https://danangaz.com/wp-content/uploads/2019/02/sua-chua-o-to-da-nang-04-min.jpg',
-  },
-];
-
 const Home = ({route}) => {
+  
   const location = route?.params?.location ?? 'DA NANG';
-  const navigation = useNavigation();
-  const [repo, setrepo] = useState([]);
-  const [isMounted] = useState(true);
+  const navigation = useNavigation()
+  const [repo, setRepo] = useState([])
 
   useEffect(() => {
     const getrepo = async () => {
@@ -150,7 +37,7 @@ const Home = ({route}) => {
           'https://keka-v2.herokuapp.com/api/garages',
         );
         const myrepo = response.data;
-        setrepo(myrepo);
+        setRepo(myrepo);
       } catch (e) {
         console.log(e);
       }
@@ -167,23 +54,32 @@ const Home = ({route}) => {
         >
           <Image
             source={config.icons.maintenance}
-            style={{width: '100%', height: '60%'}}
+            style={styles.img}
             resizeMode="center"
           />
           <Text style={styles.TEXTBTtop}>Gọi cứu hộ</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.BT}>
+        <TouchableOpacity 
+          style={styles.BT}
+          onPress={() => {
+            navigation.navigate(config.screenName.Bookcalendar);
+          }}
+
+        >
           <Image
             source={config.icons.carcheck}
-            style={{width: '100%', height: '60%'}}
+            style={styles.img}
             resizeMode="center"
           />
           <Text style={styles.TEXTBTtop}>Đặt lịch hẹn</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.BT}>
+        <TouchableOpacity 
+          style={styles.BT}
+          onPress={() => {navigation.navigate(config.screenName.PromotionScreens)}}
+        >
           <Image
             source={config.icons.giftbox}
-            style={{width: '100%', height: '60%'}}
+            style={styles.img}
             resizeMode="center"
           />
           <Text style={styles.TEXTBTtop}>Khuyến mãi</Text>
@@ -191,41 +87,37 @@ const Home = ({route}) => {
         <TouchableOpacity style={styles.BT}>
           <Image
             source={config.icons.carwash}
-            style={{width: '100%', height: '60%'}}
+            style={styles.img}
             resizeMode="center"
           />
           <Text style={styles.TEXTBTtop}>Rửa xe</Text>
         </TouchableOpacity>
       </View>
-      <>
-        <View style={styles.searchadress}>
-          <TouchableOpacity
-            style={styles.BTsearch}
-            onPress={() => {
-              navigation.navigate(config.screenName.SearchGarage);
-            }}>
-            <Icon name="search" size={20} />
-            <Text style={styles.TEXTBTsearch}>
-              Nhập tên garage hoặc dịch vụ
-            </Text>
-          </TouchableOpacity>
-          <View style={styles.viewpicker}>
-            <TouchableOpacity
-              onPress={() => {
-                navigation.navigate(config.screenName.ListAddress);
-              }}>
-              <Text>{location}</Text>
+      <View>
+          <View style={styles.searchAddress}>
+            <TouchableOpacity 
+              onPress={() => {navigation.navigate(config.screenName.SearchGarage)}}
+              style={styles.btSearch}
+            >
+              <Icon name="search" size={25} />
+              <Text style={{paddingHorizontal:5}}>Nhap ten garage hoac dich vu</Text>
             </TouchableOpacity>
+            <TouchableOpacity 
+              onPress={() => {navigation.navigate(config.screenName.ListAddress)}}
+              style={styles.btAddress}
+            >
+              <Text>{location}</Text>
+              <Icon name="chevron-down" style={{marginLeft:5}}/>
+          </TouchableOpacity>
           </View>
-        </View>
-      </>
+      </View>
       <View style={styles.list}>
         {repo?.data?.map((item, index) => {
           return (
             <View key={index}>
               <TouchableOpacity
                 onPress={() => {
-                  navigation.navigate(config.screenName.Detail,{item: item});
+                  navigation.navigate(config.screenName.DetailgarageScreens,{item: item});
                 }}>
                 <View style={styles.listItems}>
                   <Image
@@ -295,57 +187,60 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   BTtop: {
-    align: 'center',
+    marginHorizontal:7,
+    padding:10,
     justifyContent: 'center',
-    width: '100%',
-    height: 0.1 * config.screen.height,
     flexDirection: 'row',
-  },
-
-  BTtop: {
-    align: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    height: 0.1 * config.screen.height,
-    flexDirection: 'row',
+    marginTop:5,
+    flex:1
   },
   BT: {
     backgroundColor: '#FFFFFF',
     alignItems: 'center',
-    width: 0.22 * config.screen.width,
-    height: '100%',
-    margin: 5,
-    borderRadius: 10,
+    justifyContent: 'center',
+    borderRadius: 5,
+    marginHorizontal: 5,
+    width:'24%',
+    padding:10
   },
-  searchadress: {
-    marginLeft: 10,
-    marginTop: 20,
-    width: '100%',
-    height: 0.05 * config.screen.height,
+  img:{
+    width: 50,
+    height: 50
+  },
+  TEXTBTtop:{
+    color: 'red',
+    marginTop: 5,
+    fontSize:12
+  },
+  searchAddress: {
+    justifyContent: 'center',
     flexDirection: 'row',
+    marginVertical:5,
+    flex:1
   },
-  BTsearch: {
+  btSearch: {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#fff',
-    width: '65%',
-    height: '100%',
+    padding:3,
+    paddingHorizontal: 25,
     flexDirection: 'row',
-    borderRadius: 15,
+    borderRadius: 10,
     borderWidth: 1,
-    borderColor: 'red',
+    borderColor: 'red'
   },
 
-  viewpicker: {
-    marginLeft: 10,
-    alignItems: 'center',
+  btAddress: {
+    marginHorizontal:10,
     justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: '#fff',
-    width: '25%',
-    heightheight: '100%',
+    padding:3,
+    paddingHorizontal: 10,
+    flexDirection: 'row',
+    borderRadius: 10,
     borderWidth: 1,
     borderColor: 'red',
-    borderRadius: 15,
   },
   list: {
     width: '100%',

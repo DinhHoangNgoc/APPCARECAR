@@ -1,4 +1,4 @@
-import React ,{useState} from 'react';
+import React ,{useState} from 'react'
 import {
   View,
   SafeAreaView,
@@ -7,17 +7,17 @@ import {
   StyleSheet,
   Image,
   ScrollView,
-} from 'react-native';
-import Slider from '../Load/Slider';
-import Icon from 'react-native-vector-icons/Ionicons';
-import {useNavigation} from '@react-navigation/native';
-import Evaluates from './EvaluateScreen';
-import Information from './InfomationScreen';
-import Schedule from './ScheduleScreen';
-import Services from './ServiceScreen';
-import config from '../../controller/constan';
-import {ClusterMap} from 'react-native-cluster-map';
-import {Marker} from 'react-native-maps';
+} from 'react-native'
+import Slider from '../Load/Slider'
+import Icon from 'react-native-vector-icons/Ionicons'
+import {useNavigation} from '@react-navigation/native'
+import Evaluates from './EvaluateScreen'
+import Information from './InfomationScreen'
+import Schedule from './ScheduleScreen'
+import Services from './ServiceScreen'
+import config from '../../controller/Constant'
+import {ClusterMap} from 'react-native-cluster-map'
+import {Marker} from 'react-native-maps'
 
 
 const data = [
@@ -251,6 +251,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     display: 'flex',
     justifyContent: 'space-between',
+    backgroundColor: '#fff'
   },
   container: {
     flex: 1,

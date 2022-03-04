@@ -9,13 +9,13 @@ export default {
   },
 
   screenName: {
-    Login: 'Login',
-    Register: 'Register',
+    LoginScreens: 'LoginScreens',
+    RegisterScreens: 'RegisterScreens',
     Home: 'Home',
     TabBar: 'TabBar',
-    Profile: 'Profile',
-    Confirm: 'Confirm',
-    Detail: 'Detail',
+    ProfileScreen: 'ProfileScreen',
+    ConfirmScreens: 'ConfirmScreens',
+    DetailgarageScreens: 'DetailgarageScreens',
     SearchGarage: 'SearchGarage',
     WriteEvaluate: 'WriteEvaluate',
     ListAddress: 'ListAddress',
@@ -28,6 +28,8 @@ export default {
     Calendar: 'calendar',
     CalendarScreen: 'CalendarScreen',
     Rescue: 'Rescue',
+    PromotionScreens: 'PromotionScreens',
+    DetailPromotion: 'DetailPromotion',
   },
   color: {},
   icons: {
@@ -47,6 +49,8 @@ export default {
     Steps1: require('../assets/images/img_Steps1.png'),
     Steps2: require('../assets/images/img_Steps2.png'),
     Steps3: require('../assets/images/img_Steps3.png'),
+    git: require('../assets/images/img_git.png'),
+    garagebanner: require('../assets/images/img_gara_banner.png')
   },
   fonts: {
     poppinsBold: 'Poppins-Bold',

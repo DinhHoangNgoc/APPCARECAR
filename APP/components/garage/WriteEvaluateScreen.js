@@ -13,7 +13,7 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 import {Rating, AirbnbRating} from 'react-native-ratings';
-import config from '../../controller/constan';
+import config from '../../controller/Constant';
 
 const WriteEvaluate = () => {
   const navigation = useNavigation();

@@ -1,8 +1,8 @@
-import React from 'react';
-import{View,TextInput,SafeAreaView,TouchableOpacity,Text} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import {useNavigation} from '@react-navigation/native';
-import config from '../../controller/constan';
+import React from 'react'
+import{View,TextInput,SafeAreaView,TouchableOpacity,Text} from 'react-native'
+import Icon from 'react-native-vector-icons/Ionicons'
+import {useNavigation} from '@react-navigation/native'
+import config from '../../controller/Constant'
 
 const Chatgarage =({route}) =>{
 

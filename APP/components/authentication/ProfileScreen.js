@@ -8,11 +8,11 @@ import {
   StyleSheet,
   ScrollView,
   Button,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import {useNavigation} from '@react-navigation/native';
-import Modal from 'react-native-modal';
-import config from '../../controller/constan';
+} from 'react-native'
+import Icon from 'react-native-vector-icons/Ionicons'
+import {useNavigation} from '@react-navigation/native'
+import Modal from 'react-native-modal'
+import config from '../../controller/Constant'
 
 const infor = [{id: '1', name: 'hoang ngoc', SDT: '091548557', address: ''}];
 

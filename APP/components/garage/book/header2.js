@@ -8,9 +8,9 @@ import {
   Modal,
   Pressable,
   TextInput
-} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import config from '../../../controller/constan';
+} from 'react-native'
+import Icon from 'react-native-vector-icons/Ionicons'
+import config from '../../../controller/Constant'
 
 const Headers2 = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -19,39 +19,48 @@ const Headers2 = () => {
     <SafeAreaView style={styles.container}>
       <View style={styles.centeredView}>
         <View style={styles.header}>
-          <Icon name="search" size={25} style={{ marginLeft: 10}}/>
-          <TextInput placeholder="Nhập dể tìm kiếm......" 
-          style={{
-            padding:5
-          }}/>
+          <Icon name="search" size={25} style={{marginLeft: 10}} />
+          <TextInput
+            placeholder="Nhập dể tìm kiếm......"
+            style={{
+              padding: 5,
+            }}
+          />
         </View>
-         <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
-        }}
-      >
-        <View style={styles.centeredView}>
-          <View style={styles.modalView}>
-            <Text style={styles.modalText}>Hello World!</Text>
-            <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
-            >
-              <Text style={styles.textStyle}>Hide Modal</Text>
-            </Pressable>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => {
+            Alert.alert('Modal has been closed.');
+            setModalVisible(!modalVisible);
+          }}>
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <Text style={styles.modalText}>Hello World!</Text>
+              <Pressable
+                style={[styles.button, styles.buttonClose]}
+                onPress={() => setModalVisible(!modalVisible)}>
+                <Text style={styles.textStyle}>Hide Modal</Text>
+              </Pressable>
+            </View>
           </View>
-        </View>
-      </Modal>
-      <Pressable
-        style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
-      >
-        <Text style={styles.textStyle}>Show Modal</Text>
-      </Pressable>
+        </Modal>
+        <Pressable
+          style={[styles.button, styles.buttonOpen]}
+          onPress={() => setModalVisible(true)}>
+          <Text style={styles.textStyle}>Show Modal</Text>
+        </Pressable>
+        <Pressable
+          style={[styles.button, styles.buttonOpen]}
+          onPress={() => setModalVisible(true)}>
+          <Text style={styles.textStyle}>Show Modal</Text>
+        </Pressable>
+        <Pressable
+          style={[styles.button, styles.buttonOpen]}
+          onPress={() => setModalVisible(true)}>
+          <Text style={styles.textStyle}>Show Modal</Text>
+        </Pressable>
       </View>
     </SafeAreaView>
   );
@@ -103,7 +112,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#2196F3",
   },
   textStyle: {
-    color: "white",
+    color: "#000",
     fontWeight: "bold",
   },
   modalText: {

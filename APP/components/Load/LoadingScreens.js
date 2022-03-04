@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import {
   View,
   SafeAreaView,
   Image,
   StyleSheet,
-} from 'react-native';
-import config from '../../controller/constan';
+} from 'react-native'
+import config from '../../controller/Constant'
 
 export default LoadingScreen = () => {
   return (

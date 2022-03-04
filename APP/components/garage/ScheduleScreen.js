@@ -1,8 +1,8 @@
-import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
-import Icon from 'react-native-vector-icons/Ionicons';
-import {LocaleConfig} from 'react-native-calendars';
+import React from 'react'
+import {View, Text, StyleSheet} from 'react-native'
+import {Calendar, CalendarList, Agenda} from 'react-native-calendars'
+import Icon from 'react-native-vector-icons/Ionicons'
+import {LocaleConfig} from 'react-native-calendars'
 
 LocaleConfig.locales['fr'] = {
   monthNames: [
@@ -19,20 +19,6 @@ LocaleConfig.locales['fr'] = {
     'Thang 11',
     'Thang 12',
   ],
-  // monthNamesShort: [
-  //   'Janv.',
-  //   'Févr.',
-  //   'Mars',
-  //   'Avril',
-  //   'Mai',
-  //   'Juin',
-  //   'Juil.',
-  //   'Août',
-  //   'Sept.',
-  //   'Oct.',
-  //   'Nov.',
-  //   'Déc.',
-  // ],
   dayNames: ['Thu 2', 'Thu 3','Thu 4','Thu 5','Thu 6','Thu 7','CN'],
   dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
   today: "hom",

@@ -1,12 +1,11 @@
-import React,{useState} from 'react';
-import {TouchableOpacity,View,Text,SafeAreaView, StyleSheet,Image} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import config from '../../../controller/constan';
-import {useNavigation} from '@react-navigation/native';
-import Headers1 from './header';
-import Headers2 from './header2';
-import Headers3 from './header3';
-
+import React,{useState} from 'react'
+import {TouchableOpacity,View,Text,SafeAreaView, StyleSheet,Image} from 'react-native'
+import Icon from 'react-native-vector-icons/Ionicons'
+import config from '../../../controller/Constant'
+import {useNavigation} from '@react-navigation/native'
+import Headers1 from './Header'
+import Headers2 from './Header2'
+import Headers3 from './Header3'
 
 const Bookcalendar = () =>{
 
@@ -115,7 +114,7 @@ const Bookcalendar = () =>{
             onPress={() => {
               onclickcount1(count);
             }}>
-            <Text style={{color : '#fff',fontWeight: 'bold'}}>back</Text>
+            <Text style={{color : '#fff',fontWeight: 'bold'}}>Quay lại</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
@@ -125,7 +124,7 @@ const Bookcalendar = () =>{
                 navigation.navigate(config.screenName.TabBar)
             }}
             style={styles.BT}>
-            <Text style={{color : '#fff',fontWeight: 'bold'}}>Tiep</Text>
+            <Text style={{color : '#fff',fontWeight: 'bold'}}>Tiếp</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
